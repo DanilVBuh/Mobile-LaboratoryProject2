@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NotForgot</string>
+    <string name="toolbar_title">Not Forgot!</string>
+    <string name="clocks_content_description">picture with clocks</string>
+    <string name="logo_content_description">picture with logo</string>
+    <string name="white_rectangle">white rectangle</string>
+</resources>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:background="@color/colorBackgroundPrimary"
+              android:foreground="@drawable/edit_text_background">
+
+    <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:theme="?attr/actionBarTheme"
+            android:minHeight="?attr/actionBarSize"
+            android:id="@+id/toolbar" app:title="@string/toolbar_title"
+            app:titleTextColor="@android:color/white"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:background="@color/colorBackgroundPrimary"
+            tools:layout_editor_absoluteY="97dp">
+
+        <TextView
+                android:text="Добавить заметку"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView"
+                android:textColor="@color/colorTextAdditional" android:textSize="30sp" android:textStyle="bold"
+                android:textAlignment="textStart"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/constraintLayout" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="8dp" android:layout_marginStart="16dp"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp" android:id="@+id/constraintLayout"
+                android:background="@color/colorBackgroundWhite" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/saveTaskButton" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/textView" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+        >
+
+            <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/taskNameEditText" android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="16dp"
+                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="16dp" android:hint="Название"/>
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/setDateButton" android:layout_marginBottom="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent" android:layout_marginStart="16dp"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent" android:hint="Сделать до"
+                    style="@style/Widget.AppCompat.EditText"/>
+            <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:inputType=""
+                    android:ems="10"
+                    android:id="@+id/descriptionText" android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/taskNameEditText" android:layout_marginStart="16dp"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent" android:hint="Описание"
+                    android:gravity="start" android:layout_marginBottom="16dp"
+                    app:layout_constraintBottom_toTopOf="@+id/categorySpinner"
+            />
+            <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/prioritySpinner"
+                    app:layout_constraintBottom_toTopOf="@+id/setDateButton" android:layout_marginBottom="16dp"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+                    android:spinnerMode="dropdown"/>
+            <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/categorySpinner"
+                    app:layout_constraintBottom_toTopOf="@+id/prioritySpinner"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+                    android:layout_marginBottom="16dp" app:layout_constraintEnd_toStartOf="@+id/addCategoryButton"
+                    android:layout_marginEnd="8dp"/>
+
+            <ImageButton
+                    android:id="@+id/addCategoryButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="#00FFFFFF"
+                    app:layout_constraintBottom_toTopOf="@+id/prioritySpinner"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:srcCompat="@drawable/ic_add_orange" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+                android:text="сохранить"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/saveTaskButton"
+                android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

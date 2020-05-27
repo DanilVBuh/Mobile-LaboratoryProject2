@@ -1,0 +1,26 @@
+
+
+//FUNCTION TO HIDE STATUS BAR
+
+private fun hideStatusBar(){
+        if (Build.VERSION.SDK_INT >= 23) {
+            window.setFlags(AccessibilityNodeInfoCompat.ACTION_NEXT_HTML_ELEMENT, AccessibilityNodeInfoCompat.ACTION_NEXT_HTML_ELEMENT)
+            window.decorView.systemUiVisibility = 3328
+        }else{
+            requestWindowFeature(Window.FEATURE_NO_TITLE)
+            this.window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        }
+    }
+
+//типы приоритетеов:
+    важный
+    не очень важный
+    не важный
+    никогда
+
+//selected item in spinner
+Spinner spinner = (Spinner) findViewById(R.id.spinner);
+String selected = spinner.getSelectedItem().toString();
+Toast.makeText(getApplicationContext(), selected, Toast.LENGTH_SHORT).show();
+
+//
